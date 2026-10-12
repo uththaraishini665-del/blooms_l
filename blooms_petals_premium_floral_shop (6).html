@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooms & Petals | Artisan Floral Design & Delivery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: {
+                            50: '#fdf8f8',
+                            100: '#f9f0f1',
+                            200: '#f3e1e3',
+                            300: '#e8c7cb',
+                            400: '#da9ea6',
+                            500: '#c57480',
+                            600: '#af5663',
+                        },
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3eae3',
+                            200: '#c9d7c9',
+                            300: '#a5bda5',
+                            400: '#7c9c7c',
+                            500: '#5c7e5c',
+                            600: '#466346',
+                            800: '#2c3e2c',
+                        },
+                        cream: '#fcfaf7',
+                        gold: '#d4af37',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfaf7;
+            color: #2c3e2c;
+        }
+        .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .glass-nav {
+            background: rgba(252, 250, 247, 0.88);
+            backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f7f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c9d7c9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a5bda5;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <header class="sticky top-0 z-40 glass-nav border-b border-sage-100 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <button id="mobile-menu-btn" class="lg:hidden text-sage-800 hover:text-blush-600 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-blush-100 flex items-center justify-center text-blush-600 group-hover:bg-blush-500 group-hover:text-white transition-all duration-300">
+                    <i class="fa-solid fa-seedling text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif-title text-2xl font-bold tracking-wide text-sage-800 block leading-none">Blooms & Petals</span>
+                    <span class="text-[10px] tracking-widest uppercase text-blush-500 font-semibold block mt-0.5">Artisan Florist</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-sage-800">
+                <a href="#hero" class="hover:text-blush-600 transition-colors py-1 relative">Home</a>
+                <a href="#catalog" class="hover:text-blush-600 transition-colors py-1 relative">Arrangements</a>
+                <a href="#custom-builder" class="hover:text-blush-600 transition-colors py-1 relative">Custom Bouquet</a>
+                <a href="#addons" class="hover:text-blush-600 transition-colors py-1 relative">Add-ons</a>
+                <a href="#offers" class="hover:text-blush-600 transition-colors py-1 relative">Offers</a>
+                <button id="nav-quiz-btn" class="text-blush-600 hover:text-blush-700 font-bold transition-colors py-1 flex items-center gap-1.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> Occasion Finder
+                </button>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button id="admin-toggle-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-blush-50 hover:bg-blush-100 text-blush-700 text-xs font-semibold rounded-full border border-blush-200 transition-all">
+                    <i class="fa-solid fa-user-shield text-blush-600"></i> Owner Portal
+                </button>
+                <button id="track-order-nav-btn" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-sage-50 hover:bg-sage-100 text-sage-800 text-xs font-semibold rounded-full border border-sage-200 transition-all">
+                    <i class="fa-solid fa-truck-fast text-blush-500"></i> Track Order
+                </button>
+                <button id="search-toggle-btn" class="p-2 text-sage-800 hover:text-blush-600 rounded-full hover:bg-sage-50 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+                <button id="wishlist-btn" class="relative p-2 text-sage-800 hover:text-blush-600 rounded-full hover:bg-sage-50 transition-colors">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                    <span id="wishlist-count" class="absolute -top-1 -right-1 bg-sage-800 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button id="cart-btn" class="relative p-2 bg-sage-50 hover:bg-blush-50 text-sage-800 hover:text-blush-600 rounded-full transition-all duration-300 flex items-center justify-center">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-blush-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="search-bar" class="hidden border-t border-sage-100 bg-white py-3 px-4 shadow-inner">
+            <div class="max-w-3xl mx-auto flex items-center gap-2">
+                <i class="fa-solid fa-magnifying-glass text-sage-400"></i>
+                <input type="text" id="search-input" placeholder="Search roses, peonies, birthday arrangements, candles..." class="w-full bg-transparent border-none focus:outline-none text-sm text-sage-800 placeholder-sage-400">
+                <button id="search-close" class="text-sage-400 hover:text-sage-800 text-sm">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-sage-100 px-6 py-4 space-y-3">
+            <a href="#hero" class="block text-sage-800 hover:text-blush-600 font-medium py-1">Home</a>
+            <a href="#catalog" class="block text-sage-800 hover:text-blush-600 font-medium py-1">Arrangements</a>
+            <a href="#custom-builder" class="block text-sage-800 hover:text-blush-600 font-medium py-1">Custom Bouquet</a>
+            <a href="#addons" class="block text-sage-800 hover:text-blush-600 font-medium py-1">Gift Add-ons</a>
+            <button id="mobile-admin-btn" class="w-full text-left text-blush-700 font-semibold py-1 flex items-center gap-2">
+                <i class="fa-solid fa-user-shield text-blush-600"></i> Shop Owner Mode
+            </button>
+            <button id="mobile-track-btn" class="w-full text-left text-sage-800 hover:text-blush-600 font-medium py-1 flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-blush-500"></i> Track Order Status
+            </button>
+            <button id="mobile-quiz-btn" class="w-full text-left text-blush-600 font-bold py-1 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Take Occasion Quiz
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <section id="hero" class="relative overflow-hidden pt-10 pb-16 md:py-24 bg-gradient-to-b from-blush-50/60 via-cream to-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-blush-100 border border-blush-200 px-3 py-1.5 rounded-full text-blush-600 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-sparkles text-blush-500"></i> Express Same-Day Flower Delivery Available
+                        </div>
+                        <h1 class="font-serif-title text-5xl sm:text-6xl md:text-7xl font-bold text-sage-800 leading-tight">
+                            Freshness Handpicked <br class="hidden sm:inline"> For Every Memory.
+                        </h1>
+                        <p class="text-sage-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            Artisan floral bouquets delivered fresh across Sri Lanka with flexible date scheduling, custom printed message cards, and gourmet add-ons.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+                            <a href="#catalog" class="w-full sm:w-auto px-8 py-3.5 bg-blush-500 hover:bg-blush-600 text-white rounded-full font-medium shadow-lg shadow-blush-500/25 transition-all text-center flex items-center justify-center gap-2 text-sm">
+                                <span>Browse Catalog</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <button id="hero-quiz-btn" class="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-sage-50 text-sage-800 border border-sage-200 rounded-full font-medium transition-all text-center flex items-center justify-center gap-2 text-sm shadow-sm">
+                                <i class="fa-solid fa-wand-magic-sparkles text-blush-500"></i>
+                                <span>Find Perfect Bouquet</span>
+                            </button>
+                        </div>
+
+                        <div class="pt-6 grid grid-cols-3 gap-4 border-t border-sage-200/60 max-w-lg mx-auto lg:mx-0">
+                            <div class="text-center lg:text-left">
+                                <span class="block font-serif-title text-2xl font-bold text-sage-800">100%</span>
+                                <span class="text-[11px] text-sage-500 font-medium">Freshness Guarantee</span>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <span class="block font-serif-title text-2xl font-bold text-sage-800">2 Hr</span>
+                                <span class="text-[11px] text-sage-500 font-medium">Express Slot</span>
+                            </div>
+                            <div class="text-center lg:text-left">
+                                <span class="block font-serif-title text-2xl font-bold text-sage-800">4.9 ★</span>
+                                <span class="text-[11px] text-sage-500 font-medium">Verified Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]">
+                                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=1000&q=80" alt="Floral Arrangement" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl border border-white/40 shadow-lg flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-blush-500 text-white flex items-center justify-center font-bold">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] uppercase tracking-wider text-sage-600 font-bold">Florist Choice</p>
+                                            <p class="font-serif-title text-base font-bold text-sage-800">Velvet Romance Box</p>
+                                        </div>
+                                    </div>
+                                    <span class="font-bold text-blush-600 text-lg">LKR 18,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="py-10 bg-white border-y border-sage-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-serif-title text-3xl font-bold text-sage-800">Browse by Collection</h2>
+                        <p class="text-xs text-sage-500">Pick the right flowers for birthdays, anniversaries, or celebrations</p>
+                    </div>
+
+                    <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar" id="category-tabs">
+                        <button class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-800 text-white" data-category="all">All Blooms</button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-50 text-sage-700 hover:bg-sage-100" data-category="anniversary">Anniversary</button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-50 text-sage-700 hover:bg-sage-100" data-category="birthday">Birthday</button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-50 text-sage-700 hover:bg-sage-100" data-category="weddings">Weddings</button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-50 text-sage-700 hover:bg-sage-100" data-category="sympathy">Sympathy</button>
+                        <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap bg-sage-50 text-sage-700 hover:bg-sage-100" data-category="luxury">Luxury Boxes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="py-16 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="admin-banner" class="hidden mb-8 bg-sage-800 text-white p-6 rounded-3xl shadow-lg border border-sage-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-sage-700 pb-4 mb-4">
+                        <div>
+                            <span class="inline-block bg-gold/20 text-gold border border-gold/30 text-[10px] uppercase font-bold px-2.5 py-0.5 rounded-full mb-1">Owner Dashboard</span>
+                            <h3 class="font-serif-title text-2xl font-bold">Catalog Management Portal</h3>
+                        </div>
+                        <button id="open-add-flower-modal" class="px-5 py-2.5 bg-blush-500 hover:bg-blush-600 text-white rounded-full text-xs font-bold transition-all flex items-center gap-2 shadow">
+                            <i class="fa-solid fa-plus"></i> Add New Flower Variety
+                        </button>
+                    </div>
+                    <p class="text-xs text-sage-300">Logged in as Shop Owner. You can manage flower inventory, add custom bouquet bases, or delete existing floral products.</p>
+                </div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs uppercase tracking-widest text-blush-500 font-bold">Handcrafted Arrangements</span>
+                    <h2 class="font-serif-title text-4xl font-bold text-sage-800 mt-1">Our Featured Products</h2>
+                    <div class="w-12 h-0.5 bg-blush-300 mx-auto mt-2"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
+                    <!-- Dynamic Javascript Rendering -->
+                </div>
+            </div>
+        </section>
+
+        <section id="custom-builder" class="py-16 bg-white border-y border-sage-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs uppercase tracking-widest text-blush-500 font-bold">Interactive Customizer</span>
+                    <h2 class="font-serif-title text-4xl font-bold text-sage-800 mt-1">Build Your Custom Bouquet</h2>
+                    <p class="text-sage-600 text-xs mt-1">Choose stems, color palette, wrapping, and personalized greeting notes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-cream p-6 sm:p-8 rounded-3xl border border-sage-200">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <label class="block font-serif-title text-xl font-bold text-sage-800 mb-2">1. Select Primary Flower Base</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="builder-flowers">
+                                <button type="button" data-price="12500" data-name="Garden Roses" class="builder-flower-btn active flex items-center p-3 rounded-xl border-2 border-blush-500 bg-white text-left shadow-sm">
+                                    <span class="text-xl mr-2">🌹</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Garden Roses</p><p class="text-[10px] text-sage-500">LKR 500</p></div>
+                                </button>
+                                <button type="button" data-price="14000" data-name="Dutch Tulips" class="builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300">
+                                    <span class="text-xl mr-2">🌷</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Dutch Tulips</p><p class="text-[10px] text-sage-500">LKR 800</p></div>
+                                </button>
+                                <button type="button" data-price="16500" data-name="Peonies" class="builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300">
+                                    <span class="text-xl mr-2">🌸</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Peonies</p><p class="text-[10px] text-sage-500">LKR 1000</p></div>
+                                </button>
+                                <button type="button" data-price="11000" data-name="Sunflowers" class="builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300">
+                                    <span class="text-xl mr-2">🌻</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Sunflowers</p><p class="text-[10px] text-sage-500">LKR 200</p></div>
+                                </button>
+                                <button type="button" data-price="18000" data-name="Orchids" class="builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300">
+                                    <span class="text-xl mr-2">🌺</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Orchids</p><p class="text-[10px] text-sage-500">LKR 250</p></div>
+                                </button>
+                                <button type="button" data-price="9500" data-name="Wildflowers" class="builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300">
+                                    <span class="text-xl mr-2">💐</span>
+                                    <div><p class="font-bold text-xs text-sage-800">Wildflowers</p><p class="text-[10px] text-sage-500">LKR 300</p></div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-serif-title text-xl font-bold text-sage-800 mb-2">2. Palette Theme</label>
+                            <div class="flex flex-wrap gap-2" id="builder-colors">
+                                <button type="button" data-color="Soft Blush & Cream" class="builder-color-btn active px-3 py-1.5 rounded-full border-2 border-blush-500 bg-white text-xs font-semibold text-sage-800 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-blush-400"></span> Soft Blush & Cream
+                                </button>
+                                <button type="button" data-color="Vibrant Sunset" class="builder-color-btn px-3 py-1.5 rounded-full border border-sage-200 bg-white text-xs font-semibold text-sage-800 flex items-center gap-2 hover:border-blush-300">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Vibrant Sunset
+                                </button>
+                                <button type="button" data-color="Pure White & Greens" class="builder-color-btn px-3 py-1.5 rounded-full border border-sage-200 bg-white text-xs font-semibold text-sage-800 flex items-center gap-2 hover:border-blush-300">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-sage-300"></span> Pure White & Greens
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-serif-title text-xl font-bold text-sage-800 mb-2">3. Wrapping Style</label>
+                            <div class="grid grid-cols-3 gap-3" id="builder-wrap">
+                                <button type="button" data-price="0" data-wrap="Kraft Paper & Ribbon" class="builder-wrap-btn active border-2 border-blush-500 bg-white p-3 rounded-xl text-center">
+                                    <p class="font-bold text-xs text-sage-800">Rustic Kraft</p>
+                                    <p class="text-[10px] text-sage-500">Included</p>
+                                </button>
+                                <button type="button" data-price="3500" data-wrap="Glass Vase Base" class="builder-wrap-btn border border-sage-200 bg-white p-3 rounded-xl text-center hover:border-blush-300">
+                                    <p class="font-bold text-xs text-sage-800">Glass Vase</p>
+                                    <p class="text-[10px] text-sage-500">+LKR 3,500</p>
+                                </button>
+                                <button type="button" data-price="5000" data-wrap="Velvet Gift Box" class="builder-wrap-btn border border-sage-200 bg-white p-3 rounded-xl text-center hover:border-blush-300">
+                                    <p class="font-bold text-xs text-sage-800">Velvet Box</p>
+                                    <p class="text-[10px] text-sage-500">+LKR 5,000</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-sage-200 space-y-4 shadow-sm">
+                        <div class="flex items-center justify-between border-b border-sage-100 pb-3">
+                            <h3 class="font-serif-title text-2xl font-bold text-sage-800">Bouquet Summary</h3>
+                            <span class="text-[10px] bg-blush-100 text-blush-600 px-2.5 py-1 rounded-full font-bold uppercase">Live Calc</span>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-sage-700">
+                            <div class="flex justify-between">
+                                <span class="text-sage-500">Base Stem:</span>
+                                <span id="summary-flower" class="font-semibold text-sage-800">Garden Roses (LKR 12,500)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sage-500">Theme:</span>
+                                <span id="summary-color" class="font-semibold text-sage-800">Soft Blush & Cream</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sage-500">Wrapping:</span>
+                                <span id="summary-wrap" class="font-semibold text-sage-800">Kraft Paper (+LKR 0)</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-sage-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase text-sage-400 block font-bold">Custom Price</span>
+                                <span id="builder-total" class="font-serif-title text-3xl font-bold text-blush-600">LKR 12,500</span>
+                            </div>
+                            <button id="add-builder-to-cart" class="px-5 py-3 bg-sage-800 hover:bg-sage-600 text-white rounded-full text-xs font-semibold shadow transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="addons" class="py-16 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs uppercase tracking-widest text-blush-500 font-bold">Perfect Pairings</span>
+                    <h2 class="font-serif-title text-4xl font-bold text-sage-800 mt-1">Gift Add-ons & Extras</h2>
+                    <p class="text-sage-600 text-xs mt-1">Elevate your order with artisan chocolates, scented candles, and vases.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="addons-grid">
+                    <!-- Dynamic JavaScript Rendering -->
+                </div>
+            </div>
+        </section>
+
+        <section id="offers" class="py-14 bg-sage-800 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span class="inline-block bg-gold/20 text-gold border border-gold/40 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3">Limited Seasonal Offer</span>
+                        <h2 class="font-serif-title text-4xl font-bold leading-tight mb-3">
+                            Spring Blooms Offer: Get 20% Off
+                        </h2>
+                        <p class="text-sage-200 text-xs sm:text-sm mb-6 leading-relaxed">
+                            Subscribe to weekly or monthly floral deliveries or use discount code <span class="font-mono text-gold font-bold">SPRING20</span> at checkout.
+                        </p>
+                        
+                        <div class="flex items-center gap-3">
+                            <div class="bg-sage-700 p-2.5 rounded-xl border border-sage-600 text-center min-w-[60px]">
+                                <span id="timer-hours" class="block font-serif-title text-xl font-bold text-gold">14</span>
+                                <span class="text-[9px] uppercase text-sage-300">Hours</span>
+                            </div>
+                            <div class="bg-sage-700 p-2.5 rounded-xl border border-sage-600 text-center min-w-[60px]">
+                                <span id="timer-mins" class="block font-serif-title text-xl font-bold text-gold">42</span>
+                                <span class="text-[9px] uppercase text-sage-300">Mins</span>
+                            </div>
+                            <div class="bg-sage-700 p-2.5 rounded-xl border border-sage-600 text-center min-w-[60px]">
+                                <span id="timer-secs" class="block font-serif-title text-xl font-bold text-gold">18</span>
+                                <span class="text-[9px] uppercase text-sage-300">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-center space-y-3">
+                        <i class="fa-solid fa-gift text-3xl text-blush-300"></i>
+                        <h3 class="font-serif-title text-2xl font-bold">Coupon Code</h3>
+                        <div class="inline-block bg-white text-sage-800 font-mono font-bold text-lg px-5 py-2.5 rounded-xl tracking-widest border-2 border-dashed border-blush-400 select-all">
+                            SPRING20
+                        </div>
+                        <p class="text-[11px] text-sage-200">Copy code and apply in cart checkout for 20% savings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-sage-800 text-white border-t border-sage-700 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-sage-700">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-blush-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-seedling text-xs"></i>
+                        </div>
+                        <span class="font-serif-title text-xl font-bold tracking-wide">Blooms & Petals</span>
+                    </div>
+                    <p class="text-xs text-sage-300 leading-relaxed">
+                        Handcrafted floral arrangements carefully sourced from local eco-friendly nurseries in Sri Lanka.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold mb-3">Shop & Explore</h4>
+                    <ul class="space-y-2 text-xs text-sage-300">
+                        <li><a href="#catalog" class="hover:text-white transition-colors">Arrangements Catalog</a></li>
+                        <li><a href="#custom-builder" class="hover:text-white transition-colors">Custom Bouquet Builder</a></li>
+                        <li><a href="#addons" class="hover:text-white transition-colors">Gift Add-ons</a></li>
+                        <li><button id="footer-track-btn" class="hover:text-white transition-colors">Track Existing Order</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold mb-3">Customer Service</h4>
+                    <p class="text-xs text-sage-300">452 Botanical Garden Way, Colombo 07, Sri Lanka</p>
+                    <p class="text-xs text-sage-300 mt-1">Phone: +94 (11) 255-BLOOM</p>
+                    <p class="text-xs text-sage-300 mt-1">Hours: Mon-Sat 8AM - 7PM</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-gold mb-3">Newsletter</h4>
+                    <p class="text-xs text-sage-300 mb-2">Get secret sales & care tips.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Your email..." class="bg-sage-700 border border-sage-600 px-3 py-2 rounded-lg text-xs text-white focus:outline-none w-full">
+                        <button class="bg-blush-500 hover:bg-blush-600 text-white px-3 py-2 rounded-lg text-xs font-bold">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-sage-400 gap-4">
+                <p>&copy; 2026 Blooms & Petals Florist Inc. All rights reserved.</p>
+                <div class="flex gap-4 text-base">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between">
+        
+        <div class="p-5 border-b border-sage-100 flex items-center justify-between bg-cream">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-blush-600"></i>
+                <h3 class="font-serif-title text-xl font-bold text-sage-800">Your Shopping Bag</h3>
+            </div>
+            <button id="cart-close-btn" class="p-2 text-sage-400 hover:text-sage-800 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="cart-step-1" class="flex-grow overflow-y-auto p-5 space-y-4">
+            <div id="cart-items-container" class="space-y-3"></div>
+
+            <div class="border-t border-sage-100 pt-4 space-y-3">
+                <label class="block text-xs font-bold text-sage-800 uppercase tracking-wider">Coupon Code</label>
+                <div class="flex gap-2">
+                    <input type="text" id="coupon-input" placeholder="e.g. SPRING20" class="w-full px-3 py-2 border border-sage-200 rounded-xl text-xs uppercase focus:outline-none focus:border-blush-400">
+                    <button id="apply-coupon-btn" class="px-4 py-2 bg-sage-800 text-white rounded-xl text-xs font-bold hover:bg-sage-700">Apply</button>
+                </div>
+                <p id="coupon-message" class="text-[11px] font-semibold text-emerald-600 hidden"></p>
+            </div>
+        </div>
+
+        <div id="cart-step-2" class="hidden flex-grow overflow-y-auto p-5 space-y-5">
+            <div class="flex items-center justify-between border-b border-sage-100 pb-2">
+                <h4 class="font-serif-title text-lg font-bold text-sage-800">Delivery & Message Details</h4>
+                <button id="back-to-cart-btn" class="text-xs text-blush-600 font-semibold hover:underline">← Edit Items</button>
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-xs font-bold text-sage-800">1. Delivery Date & Slot</label>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <span class="text-[10px] text-sage-500 block mb-1">Select Date</span>
+                        <input type="date" id="delivery-date" class="w-full p-2 border border-sage-200 rounded-xl text-xs focus:outline-none">
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-sage-500 block mb-1">Time Slot</span>
+                        <select id="delivery-slot" class="w-full p-2 border border-sage-200 rounded-xl text-xs focus:outline-none">
+                            <option value="Morning (8:00 AM - 12:00 PM)">Morning (8 AM - 12 PM)</option>
+                            <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12 PM - 4 PM)</option>
+                            <option value="Evening (4:00 PM - 8:00 PM)">Evening (4 PM - 8 PM)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-xs font-bold text-sage-800">2. Recipient Information</label>
+                <input type="text" id="recipient-name" placeholder="Recipient Full Name" class="w-full p-2.5 border border-sage-200 rounded-xl text-xs focus:outline-none">
+                <input type="text" id="recipient-address" placeholder="Delivery Street Address & City" class="w-full p-2.5 border border-sage-200 rounded-xl text-xs focus:outline-none">
+                <input type="tel" id="recipient-phone" placeholder="Recipient Phone Number (+94)" class="w-full p-2.5 border border-sage-200 rounded-xl text-xs focus:outline-none">
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-xs font-bold text-sage-800">3. Greeting Card Message</label>
+                <textarea id="card-message" rows="3" placeholder="Write your heartfelt message to be printed on a luxury card..." class="w-full p-2.5 border border-sage-200 rounded-xl text-xs focus:outline-none bg-cream"></textarea>
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-xs font-bold text-sage-800">4. Payment Gateway Simulation</label>
+                <div class="grid grid-cols-2 gap-2">
+                    <label class="border border-sage-200 p-2.5 rounded-xl flex items-center gap-2 cursor-pointer bg-white">
+                        <input type="radio" name="payment-method" value="stripe" checked class="accent-blush-500">
+                        <span class="text-xs font-bold text-sage-800"><i class="fa-solid fa-credit-card"></i> Card / Koko</span>
+                    </label>
+                    <label class="border border-sage-200 p-2.5 rounded-xl flex items-center gap-2 cursor-pointer bg-white">
+                        <input type="radio" name="payment-method" value="paypal" class="accent-blush-500">
+                        <span class="text-xs font-bold text-sage-800"><i class="fa-solid fa-building-columns"></i> Bank Transfer</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-5 border-t border-sage-100 bg-cream space-y-3">
+            <div class="space-y-1 text-xs text-sage-600">
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal" class="font-bold text-sage-800">LKR 0</span>
+                </div>
+                <div class="flex justify-between text-emerald-600 hidden" id="discount-row">
+                    <span>Discount (20%)</span>
+                    <span id="cart-discount" class="font-bold">-LKR 0</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Estimated Delivery</span>
+                    <span id="cart-shipping" class="font-bold text-sage-800">Free</span>
+                </div>
+                <div class="flex justify-between text-sm font-bold text-sage-800 border-t border-sage-200 pt-2">
+                    <span>Total Amount</span>
+                    <span id="cart-total" class="text-blush-600">LKR 0</span>
+                </div>
+            </div>
+
+            <button id="checkout-next-btn" class="w-full py-3 bg-blush-500 hover:bg-blush-600 text-white rounded-xl text-xs font-bold transition-all shadow flex items-center justify-center gap-2">
+                <span>Continue to Delivery Details</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+
+            <button id="place-order-btn" class="hidden w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow flex items-center justify-center gap-2">
+                <i class="fa-solid fa-lock text-xs"></i>
+                <span>Confirm & Pay Order</span>
+            </button>
+        </div>
+    </aside>
+
+    <div id="tracker-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-lg w-full rounded-3xl p-6 shadow-2xl relative">
+            <button id="tracker-close-btn" class="absolute top-4 right-4 text-sage-400 hover:text-sage-800">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <i class="fa-solid fa-truck-fast text-3xl text-blush-500"></i>
+                <h3 class="font-serif-title text-3xl font-bold text-sage-800">Track Order Status</h3>
+                <p class="text-xs text-sage-500">Enter your order ID (Try demo: <span class="font-mono font-bold text-sage-800">#BP-8492</span>)</p>
+            </div>
+
+            <div class="flex gap-2 mb-6">
+                <input type="text" id="tracker-input" placeholder="e.g. #BP-8492" class="w-full px-4 py-2.5 border border-sage-200 rounded-xl text-xs focus:outline-none uppercase">
+                <button id="tracker-search-btn" class="px-5 py-2.5 bg-sage-800 hover:bg-sage-700 text-white font-bold rounded-xl text-xs">Track</button>
+            </div>
+
+            <div id="tracker-results" class="hidden space-y-6 border-t border-sage-100 pt-6">
+                <div class="flex justify-between items-center text-xs">
+                    <div>
+                        <span class="text-sage-400 block text-[10px]">Order Reference</span>
+                        <span id="track-order-id" class="font-mono font-bold text-sage-800 text-sm">#BP-8492</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sage-400 block text-[10px]">Estimated Delivery</span>
+                        <span id="track-order-date" class="font-bold text-blush-600">Today, 4:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-sage-200">
+                    <div class="flex items-start gap-4 relative">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs z-10">✓</div>
+                        <div>
+                            <p class="font-bold text-xs text-sage-800">Order Placed & Confirmed</p>
+                            <p class="text-[10px] text-sage-500">Payment received and sent to florist studio</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 relative">
+                        <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs z-10">✓</div>
+                        <div>
+                            <p class="font-bold text-xs text-sage-800">Artisan Floral Arrangement</p>
+                            <p class="text-[10px] text-sage-500">Blooms hand-trimmed and wrapped</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 relative">
+                        <div class="w-6 h-6 rounded-full bg-blush-500 text-white flex items-center justify-center text-xs z-10 animate-pulse">🚚</div>
+                        <div>
+                            <p class="font-bold text-xs text-sage-800">Out for Courier Delivery</p>
+                            <p class="text-[10px] text-sage-500">Courier en route to recipient address</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QuickView Modal -->
+    <div id="quickview-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl relative grid grid-cols-1 md:grid-cols-2" id="quickview-content">
+        </div>
+        <button id="quickview-close" class="absolute top-4 right-4 text-white md:text-sage-400 hover:text-sage-800 bg-black/20 md:bg-transparent rounded-full w-8 h-8 flex items-center justify-center z-10">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+    </div>
+
+    <!-- Occasion Finder Quiz Modal -->
+    <div id="quiz-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-lg w-full rounded-3xl p-6 shadow-2xl relative">
+            <button id="quiz-close-btn" class="absolute top-4 right-4 text-sage-400 hover:text-sage-800">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <i class="fa-solid fa-wand-magic-sparkles text-3xl text-blush-500"></i>
+                <h3 class="font-serif-title text-3xl font-bold text-sage-800">Occasion Assistant</h3>
+                <p class="text-xs text-sage-500">Answer 3 quick questions to discover the ideal arrangement</p>
+            </div>
+
+            <div id="quiz-step-1" class="space-y-4">
+                <p class="font-bold text-xs text-sage-800 text-center">Who is this arrangement for?</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="who" data-val="Partner">❤️ Partner / Spouse</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="who" data-val="Parent">👩 Mom / Parent</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="who" data-val="Friend">🤝 Friend / Colleague</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="who" data-val="Myself">🌿 Self Treatment</button>
+                </div>
+            </div>
+
+            <div id="quiz-step-2" class="hidden space-y-4">
+                <p class="font-bold text-xs text-sage-800 text-center">What is the occasion?</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="occasion" data-val="Birthday">🎂 Birthday</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="occasion" data-val="Anniversary">💍 Anniversary</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="occasion" data-val="Thank You">🙏 Thank You</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="occasion" data-val="Sympathy">🕊 Sympathy & Healing</button>
+                </div>
+            </div>
+
+            <div id="quiz-step-3" class="hidden space-y-4">
+                <p class="font-bold text-xs text-sage-800 text-center">Select your preferred price range:</p>
+                <div class="grid grid-cols-3 gap-2">
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="budget" data-val="under15k">Under LKR 15k</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="budget" data-val="15k-25k">LKR 15k - 25k</button>
+                    <button type="button" class="quiz-opt-btn p-3 border border-sage-200 rounded-2xl text-xs font-semibold hover:border-blush-400 hover:bg-blush-50" data-key="budget" data-val="25kplus">LKR 25k+</button>
+                </div>
+            </div>
+
+            <div id="quiz-result" class="hidden space-y-4 text-center">
+                <p class="text-xs font-bold text-sage-600">Your Tailored Match:</p>
+                <div id="quiz-recommended-card" class="bg-cream p-4 rounded-2xl border border-sage-200 space-y-2"></div>
+                <button id="quiz-restart-btn" class="text-xs text-sage-500 underline">Retake Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-md w-full rounded-3xl p-6 shadow-2xl relative">
+            <button id="wishlist-close-btn" class="absolute top-4 right-4 text-sage-400 hover:text-sage-800">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-2 mb-4 border-b border-sage-100 pb-3">
+                <i class="fa-solid fa-heart text-blush-500 text-xl"></i>
+                <h3 class="font-serif-title text-2xl font-bold text-sage-800">Your Saved Favorites</h3>
+            </div>
+
+            <div id="wishlist-container" class="space-y-3 max-h-80 overflow-y-auto pr-1"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 space-y-2 pointer-events-none"></div>
+
+    <div id="admin-login-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-sm w-full rounded-3xl p-6 shadow-2xl relative">
+            <button id="admin-login-close" class="absolute top-4 right-4 text-sage-400 hover:text-sage-800">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 rounded-full bg-blush-100 text-blush-600 flex items-center justify-center mx-auto text-xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-serif-title text-2xl font-bold text-sage-800">Shop Owner Access</h3>
+                <p class="text-xs text-sage-500">Enter password to enable catalog management permissions. (Demo PIN: <span class="font-mono font-bold text-sage-800">1234</span>)</p>
+            </div>
+            <form id="admin-login-form" class="space-y-4">
+                <div>
+                    <input type="password" id="admin-pass-input" placeholder="Enter Owner Passcode" class="w-full p-3 border border-sage-200 rounded-xl text-xs text-center font-mono focus:outline-none focus:border-blush-500">
+                </div>
+                <button type="submit" class="w-full py-3 bg-sage-800 hover:bg-sage-700 text-white font-bold rounded-xl text-xs transition-all shadow">
+                    Authenticate as Owner
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="add-flower-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white max-w-lg w-full rounded-3xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button id="add-flower-close" class="absolute top-4 right-4 text-sage-400 hover:text-sage-800">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center space-y-1 mb-6">
+                <span class="text-[10px] uppercase font-bold text-blush-500 tracking-wider">Inventory Update</span>
+                <h3 class="font-serif-title text-3xl font-bold text-sage-800">Add New Flower Variety</h3>
+            </div>
+
+            <form id="add-flower-form" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-sage-800 mb-1">Flower / Arrangement Name</label>
+                    <input type="text" id="new-flower-title" required placeholder="e.g. Royal Blue Hydrangeas" class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-sage-800 mb-1">Price (LKR)</label>
+                        <input type="number" step="1" id="new-flower-price" required placeholder="18500" class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-sage-800 mb-1">Category</label>
+                        <select id="new-flower-category" class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400">
+                            <option value="anniversary">Anniversary</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="weddings">Weddings</option>
+                            <option value="sympathy">Sympathy</option>
+                            <option value="luxury">Luxury Boxes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-sage-800 mb-1">Image URL</label>
+                    <input type="url" id="new-flower-image" placeholder="https://images.unsplash.com/..." class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400">
+                    <p class="text-[10px] text-sage-400 mt-1">Leave empty for automatic floral image assignment.</p>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-sage-800 mb-1">Badge Tag</label>
+                    <input type="text" id="new-flower-badge" placeholder="e.g. Rare Import, Limited Edition" class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-sage-800 mb-1">Description</label>
+                    <textarea id="new-flower-desc" rows="3" required placeholder="Describe the stems, aroma, and presentation..." class="w-full p-2.5 border border-sage-200 rounded-xl focus:outline-none focus:border-blush-400"></textarea>
+                </div>
+
+                <div class="flex items-center gap-2 pt-2">
+                    <input type="checkbox" id="add-to-builder-option" class="rounded text-blush-500 focus:ring-blush-400">
+                    <label for="add-to-builder-option" class="font-bold text-sage-700">Also add as a base option in Custom Bouquet Builder</label>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-blush-500 hover:bg-blush-600 text-white rounded-xl font-bold shadow transition-all">
+                    Publish Flower Variety
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+        // High Quality Floral & Add-on Products Data (In Sri Lankan Rupees)
+        const products = [
+            {
+                id: 'p1',
+                title: 'Velvet Rose Deluxe',
+                price: 18500,
+                rating: 5.0,
+                category: 'anniversary',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+                badge: 'Bestseller',
+                description: 'Classic crimson velvety roses accented with delicate baby’s breath and fresh eucalyptus leaves.'
+            },
+            {
+                id: 'p2',
+                title: 'Sunshine Daisy Box',
+                price: 13500,
+                rating: 4.8,
+                category: 'birthday',
+                image: 'https://images.unsplash.com/photo-1591886960571-74d43a9d4166?auto=format&fit=crop&w=800&q=80',
+                badge: 'Bright & Cheerful',
+                description: 'Vibrant yellow sunflowers paired with chamomile daisies for an instant mood booster.'
+            },
+            {
+                id: 'p3',
+                title: 'Blush Peony Elegance',
+                price: 22000,
+                rating: 4.9,
+                category: 'weddings',
+                image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80',
+                badge: 'Premium Choice',
+                description: 'Soft pink peonies paired with white hydrangeas presented in a signature gift box.'
+            },
+            {
+                id: 'p4',
+                title: 'White Lily Comfort',
+                price: 16000,
+                rating: 4.7,
+                category: 'sympathy',
+                image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80',
+                badge: 'Peaceful',
+                description: 'Serene white lilies and white carnations arranged with soft greenery.'
+            },
+            {
+                id: 'p5',
+                title: 'Pastel Tulip Meadow',
+                price: 15000,
+                rating: 4.8,
+                category: 'birthday',
+                image: 'https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=800&q=80',
+                badge: 'Seasonal',
+                description: 'Fresh Dutch pastel tulips in soft lavender, pink, and cream hues.'
+            },
+            {
+                id: 'p6',
+                title: 'Royal Orchid Box',
+                price: 28500,
+                rating: 5.0,
+                category: 'luxury',
+                image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80',
+                badge: 'Luxury Edition',
+                description: 'Exquisite purple phalaenopsis orchids in a gold-embossed black hat box.'
+            },
+            {
+                id: 'p7',
+                title: 'Wildflower Whisper',
+                price: 12000,
+                rating: 4.6,
+                category: 'anniversary',
+                image: 'https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80',
+                badge: 'Rustic Pick',
+                description: 'Handcrafted blend of garden lavender, thistles, and field blooms.'
+            },
+            {
+                id: 'p8',
+                title: 'Golden Horizon Sunflowers',
+                price: 14500,
+                rating: 4.9,
+                category: 'birthday',
+                image: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80',
+                badge: 'Top Gift',
+                description: 'Bold long-stem sunflowers wrapped with eco-friendly brown kraft paper.'
+            }
+        ];
+
+        const addonsList = [
+            { id: 'a1', title: 'Luxury Crystal Vase', price: 4500, image: 'https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=400&q=80' },
+            { id: 'a2', title: 'Belgian Truffle Box', price: 3800, image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=400&q=80' },
+            { id: 'a3', title: 'Lavender Scented Candle', price: 3200, image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=400&q=80' },
+            { id: 'a4', title: 'Soft Cuddle Plush Bear', price: 3500, image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=400&q=80' }
+        ];
+
+        // State variables
+        let cart = [];
+        let wishlist = [];
+        let isDiscountApplied = false;
+        let quizAnswers = {};
+        let isOwner = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+            renderAddons(addonsList);
+            initNavigation();
+            initCartAndCheckout();
+            initCustomBuilder();
+            initQuickView();
+            initTracker();
+            initQuiz();
+            initWishlist();
+            initCountdown();
+            initAdminPortal();
+
+            // Set default delivery date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('delivery-date').value = today;
+            document.getElementById('delivery-date').min = today;
+        });
+
+        // Helper function to format LKR currency
+        function formatLKR(amount) {
+            return 'LKR ' + amount.toLocaleString('en-LK', { maximumFractionDigits: 0 });
+        }
+
+        // Render Product Catalog
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            items.forEach(product => {
+                const isWish = wishlist.includes(product.id);
+                const card = document.createElement('div');
+                card.className = 'group bg-white rounded-3xl overflow-hidden border border-sage-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative';
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-square">
+                        <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-sage-800 shadow">
+                            ${product.badge}
+                        </span>
+                        <button onclick="toggleWishlist('${product.id}')" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 shadow flex items-center justify-center text-sage-600 hover:text-blush-600 transition-colors">
+                            <i class="${isWish ? 'fa-solid text-blush-500' : 'fa-regular'} fa-heart"></i>
+                        </button>
+                        ${isOwner ? `<button onclick="deleteProduct('${product.id}')" title="Delete product" class="absolute bottom-4 left-4 w-9 h-9 rounded-full bg-rose-600 text-white shadow flex items-center justify-center text-xs hover:bg-rose-700 transition-all z-20"><i class="fa-solid fa-trash"></i></button>` : ''}
+                        <button class="quick-view-btn absolute bottom-4 right-4 w-9 h-9 bg-white/90 hover:bg-blush-500 hover:text-white rounded-full flex items-center justify-center text-sage-800 transition-all opacity-0 group-hover:opacity-100 shadow" data-id="${product.id}">
+                            <i class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-amber-500 font-semibold mb-1">
+                                <span>★ ${product.rating.toFixed(1)}</span>
+                                <span class="uppercase text-[10px] tracking-wider text-sage-400 font-bold">${product.category}</span>
+                            </div>
+                            <h3 class="font-serif-title text-xl font-bold text-sage-800 group-hover:text-blush-600 transition-colors">${product.title}</h3>
+                            <p class="text-sage-500 text-xs mt-1 line-clamp-2">${product.description}</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-sage-50 pt-4">
+                            <span class="font-serif-title text-xl font-bold text-sage-800">${formatLKR(product.price)}</span>
+                            <button onclick="addToCart('${product.id}')" class="px-4 py-2 bg-sage-50 hover:bg-blush-500 hover:text-white text-sage-800 rounded-full text-xs font-semibold transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        window.deleteProduct = function(productId) {
+            if (!isOwner) return;
+            const idx = products.findIndex(p => p.id === productId);
+            if (idx > -1) {
+                const deleted = products.splice(idx, 1)[0];
+                renderProducts(products);
+                showToast(`Deleted ${deleted.title}`);
+            }
+        };
+
+        function initAdminPortal() {
+            const adminBtn = document.getElementById('admin-toggle-btn');
+            const mobileAdminBtn = document.getElementById('mobile-admin-btn');
+            const loginModal = document.getElementById('admin-login-modal');
+            const addFlowerModal = document.getElementById('add-flower-modal');
+
+            const toggleLoginModal = (show) => {
+                if (show) loginModal.classList.remove('opacity-0', 'pointer-events-none');
+                else loginModal.classList.add('opacity-0', 'pointer-events-none');
+            };
+
+            const toggleAddModal = (show) => {
+                if (show) addFlowerModal.classList.remove('opacity-0', 'pointer-events-none');
+                else addFlowerModal.classList.add('opacity-0', 'pointer-events-none');
+            };
+
+            adminBtn.addEventListener('click', () => {
+                if (!isOwner) toggleLoginModal(true);
+                else logoutAdmin();
+            });
+            if (mobileAdminBtn) {
+                mobileAdminBtn.addEventListener('click', () => {
+                    if (!isOwner) toggleLoginModal(true);
+                    else logoutAdmin();
+                });
+            }
+
+            document.getElementById('admin-login-close').addEventListener('click', () => toggleLoginModal(false));
+            document.getElementById('add-flower-close').addEventListener('click', () => toggleAddModal(false));
+            document.getElementById('open-add-flower-modal').addEventListener('click', () => toggleAddModal(true));
+
+            // Owner Login Authentication
+            document.getElementById('admin-login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const pass = document.getElementById('admin-pass-input').value;
+                if (pass === '1234') {
+                    isOwner = true;
+                    toggleLoginModal(false);
+                    document.getElementById('admin-banner').classList.remove('hidden');
+                    adminBtn.classList.replace('bg-blush-50', 'bg-rose-100');
+                    adminBtn.classList.replace('text-blush-700', 'text-rose-800');
+                    adminBtn.innerHTML = `<i class="fa-solid fa-right-from-bracket text-rose-600"></i> Owner (Logout)`;
+                    renderProducts(products);
+                    showToast('Authenticated as Shop Owner!');
+                } else {
+                    showToast('Incorrect passcode. Use 1234');
+                }
+            });
+
+            function logoutAdmin() {
+                isOwner = false;
+                document.getElementById('admin-banner').classList.add('hidden');
+                adminBtn.classList.replace('bg-rose-100', 'bg-blush-50');
+                adminBtn.classList.replace('text-rose-800', 'text-blush-700');
+                adminBtn.innerHTML = `<i class="fa-solid fa-user-shield text-blush-600"></i> Owner Portal`;
+                renderProducts(products);
+                showToast('Logged out of Owner Portal');
+            }
+
+            // Handle New Flower Addition
+            document.getElementById('add-flower-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const title = document.getElementById('new-flower-title').value.trim();
+                const price = parseFloat(document.getElementById('new-flower-price').value);
+                const category = document.getElementById('new-flower-category').value;
+                let image = document.getElementById('new-flower-image').value.trim();
+                const badge = document.getElementById('new-flower-badge').value.trim() || 'New Variety';
+                const description = document.getElementById('new-flower-desc').value.trim();
+                const addToBuilder = document.getElementById('add-to-builder-option').checked;
+
+                if (!image) {
+                    image = 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80';
+                }
+
+                const newId = 'p' + (products.length + 1) + '_' + Date.now();
+                const newProduct = {
+                    id: newId,
+                    title,
+                    price,
+                    rating: 5.0,
+                    category,
+                    image,
+                    badge,
+                    description
+                };
+
+                products.unshift(newProduct);
+                renderProducts(products);
+
+                if (addToBuilder) {
+                    const builderContainer = document.getElementById('builder-flowers');
+                    const newBtn = document.createElement('button');
+                    newBtn.type = 'button';
+                    newBtn.dataset.price = price;
+                    newBtn.dataset.name = title;
+                    newBtn.className = 'builder-flower-btn flex items-center p-3 rounded-xl border border-sage-200 bg-white text-left hover:border-blush-300';
+                    newBtn.innerHTML = `<span class="text-xl mr-2">🌸</span><div><p class="font-bold text-xs text-sage-800">${title}</p><p class="text-[10px] text-sage-500">${formatLKR(price)}</p></div>`;
+                    builderContainer.appendChild(newBtn);
+                    
+                    newBtn.addEventListener('click', () => {
+                        document.querySelectorAll('.builder-flower-btn').forEach(b => b.classList.remove('active', 'border-2', 'border-blush-500'));
+                        newBtn.classList.add('active', 'border-2', 'border-blush-500');
+                        document.getElementById('summary-flower').textContent = `${title} (${formatLKR(price)})`;
+                        const wrapPrice = parseFloat(document.querySelector('.builder-wrap-btn.active')?.dataset.price || 0);
+                        document.getElementById('builder-total').textContent = `${formatLKR(price + wrapPrice)}`;
+                    });
+                }
+
+                toggleAddModal(false);
+                document.getElementById('add-flower-form').reset();
+                showToast(`New variety "${title}" added successfully!`);
+            });
+        }
+
+        function renderAddons(items) {
+            const grid = document.getElementById('addons-grid');
+            grid.innerHTML = '';
+            items.forEach(addon => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-4 rounded-2xl border border-sage-100 flex items-center gap-3 shadow-sm hover:border-blush-300 transition-all';
+                card.innerHTML = `
+                    <img src="${addon.image}" alt="${addon.title}" class="w-14 h-14 rounded-xl object-cover">
+                    <div class="flex-grow">
+                        <h4 class="font-bold text-xs text-sage-800">${addon.title}</h4>
+                        <p class="text-xs text-blush-600 font-bold">${formatLKR(addon.price)}</p>
+                    </div>
+                    <button onclick="addAddonToCart('${addon.id}')" class="px-3 py-1.5 bg-sage-50 hover:bg-blush-500 hover:text-white text-sage-800 rounded-lg text-xs font-bold transition-colors">
+                        + Add
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Category Filter Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-sage-800', 'text-white');
+                    b.classList.add('bg-sage-50', 'text-sage-700');
+                });
+                btn.classList.add('active', 'bg-sage-800', 'text-white');
+                btn.classList.remove('bg-sage-50', 'text-sage-700');
+
+                const category = btn.dataset.category;
+                if (category === 'all') renderProducts(products);
+                else renderProducts(products.filter(p => p.category === category));
+            });
+        });
+
+        // Cart & Checkout Logic
+        function initCartAndCheckout() {
+            const cartBtn = document.getElementById('cart-btn');
+            const cartCloseBtn = document.getElementById('cart-close-btn');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const nextBtn = document.getElementById('checkout-next-btn');
+            const backBtn = document.getElementById('back-to-cart-btn');
+            const placeOrderBtn = document.getElementById('place-order-btn');
+
+            cartBtn.addEventListener('click', openCart);
+            cartCloseBtn.addEventListener('click', closeCart);
+            cartOverlay.addEventListener('click', closeCart);
+
+            nextBtn.addEventListener('click', () => {
+                if (cart.length === 0) return showToast('Your shopping bag is empty!');
+                document.getElementById('cart-step-1').classList.add('hidden');
+                document.getElementById('cart-step-2').classList.remove('hidden');
+                nextBtn.classList.add('hidden');
+                placeOrderBtn.classList.remove('hidden');
+            });
+
+            backBtn.addEventListener('click', () => {
+                document.getElementById('cart-step-2').classList.add('hidden');
+                document.getElementById('cart-step-1').classList.remove('hidden');
+                placeOrderBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+            });
+
+            // Coupon Code Handling
+            document.getElementById('apply-coupon-btn').addEventListener('click', () => {
+                const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+                if (code === 'SPRING20') {
+                    isDiscountApplied = true;
+                    document.getElementById('coupon-message').textContent = '✓ 20% Discount Code Applied!';
+                    document.getElementById('coupon-message').classList.remove('hidden');
+                    updateCartUI();
+                    showToast('20% coupon code applied!');
+                } else {
+                    showToast('Invalid promo code. Use SPRING20');
+                }
+            });
+
+            // Simulated Payment & Order Completion
+            placeOrderBtn.addEventListener('click', () => {
+                const recipientName = document.getElementById('recipient-name').value.trim();
+                const address = document.getElementById('recipient-address').value.trim();
+                const date = document.getElementById('delivery-date').value;
+
+                if (!recipientName || !address) {
+                    showToast('Please enter recipient name and address!');
+                    return;
+                }
+
+                const newOrderId = '#BP-' + Math.floor(1000 + Math.random() * 9000);
+                showToast(`Order ${newOrderId} placed successfully!`);
+                
+                alert(`Thank you! Order ${newOrderId} has been processed.\nDelivery set for ${date}.\nRecipient: ${recipientName}`);
+
+                cart = [];
+                isDiscountApplied = false;
+                document.getElementById('coupon-input').value = '';
+                document.getElementById('coupon-message').classList.add('hidden');
+                document.getElementById('cart-step-2').classList.add('hidden');
+                document.getElementById('cart-step-1').classList.remove('hidden');
+                placeOrderBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+                updateCartUI();
+                closeCart();
+            });
+        }
+
+        function openCart() {
+            document.getElementById('cart-drawer').classList.remove('translate-x-full');
+            document.getElementById('cart-overlay').classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeCart() {
+            document.getElementById('cart-drawer').classList.add('translate-x-full');
+            document.getElementById('cart-overlay').classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        window.addToCart = function(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            const existing = cart.find(item => item.id === productId);
+            if (existing) existing.quantity += 1;
+            else cart.push({ ...product, quantity: 1 });
+            updateCartUI();
+            showToast(`${product.title} added to bag!`);
+        };
+
+        window.addAddonToCart = function(addonId) {
+            const addon = addonsList.find(a => a.id === addonId);
+            if (!addon) return;
+            const existing = cart.find(item => item.id === addonId);
+            if (existing) existing.quantity += 1;
+            else cart.push({ ...addon, quantity: 1 });
+            updateCartUI();
+            showToast(`${addon.title} added to bag!`);
+        };
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const countBadge = document.getElementById('cart-count');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+            const discountRow = document.getElementById('discount-row');
+            const discountEl = document.getElementById('cart-discount');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            countBadge.textContent = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-10 space-y-2">
+                        <i class="fa-solid fa-basket-shopping text-3xl text-sage-200"></i>
+                        <p class="text-xs font-bold text-sage-600">Your bag is empty</p>
+                    </div>
+                `;
+                subtotalEl.textContent = 'LKR 0';
+                totalEl.textContent = 'LKR 0';
+                discountRow.classList.add('hidden');
+                return;
+            }
+
+            container.innerHTML = '';
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.quantity;
+                const el = document.createElement('div');
+                el.className = 'flex items-center gap-3 p-3 bg-cream rounded-2xl border border-sage-100';
+                el.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="w-12 h-12 rounded-xl object-cover shrink-0">
+                    <div class="flex-grow">
+                        <h4 class="font-serif-title font-bold text-xs text-sage-800">${item.title}</h4>
+                        <p class="text-[10px] text-blush-600 font-bold">${formatLKR(item.price)}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center border border-sage-200 rounded-full px-2 py-0.5 bg-white text-xs">
+                            <button onclick="updateQty(${index}, -1)" class="px-1 text-sage-600 font-bold">-</button>
+                            <span class="px-1.5 font-semibold text-sage-800">${item.quantity}</span>
+                            <button onclick="updateQty(${index}, 1)" class="px-1 text-sage-600 font-bold">+</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+
+            let discount = isDiscountApplied ? subtotal * 0.2 : 0;
+            let finalTotal = subtotal - discount;
+
+            subtotalEl.textContent = formatLKR(subtotal);
+            if (isDiscountApplied) {
+                discountRow.classList.remove('hidden');
+                discountEl.textContent = `-${formatLKR(discount)}`;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+            totalEl.textContent = formatLKR(finalTotal);
+        }
+
+        window.updateQty = function(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) cart.splice(index, 1);
+            updateCartUI();
+        };
+
+        // Custom Builder Setup
+        function initCustomBuilder() {
+            let selectedFlower = { name: 'Garden Roses', price: 12500 };
+            let selectedColor = 'Soft Blush & Cream';
+            let selectedWrap = { name: 'Kraft Paper & Ribbon', price: 0 };
+
+            const updateSummary = () => {
+                document.getElementById('summary-flower').textContent = `${selectedFlower.name} (${formatLKR(selectedFlower.price)})`;
+                document.getElementById('summary-color').textContent = selectedColor;
+                document.getElementById('summary-wrap').textContent = `${selectedWrap.name} (+${formatLKR(selectedWrap.price)})`;
+                const total = selectedFlower.price + selectedWrap.price;
+                document.getElementById('builder-total').textContent = formatLKR(total);
+            };
+
+            document.querySelectorAll('.builder-flower-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.builder-flower-btn').forEach(b => b.classList.remove('active', 'border-2', 'border-blush-500'));
+                    btn.classList.add('active', 'border-2', 'border-blush-500');
+                    selectedFlower = { name: btn.dataset.name, price: parseFloat(btn.dataset.price) };
+                    updateSummary();
+                });
+            });
+
+            document.querySelectorAll('.builder-color-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.builder-color-btn').forEach(b => b.classList.remove('active', 'border-2', 'border-blush-500'));
+                    btn.classList.add('active', 'border-2', 'border-blush-500');
+                    selectedColor = btn.dataset.color;
+                    updateSummary();
+                });
+            });
+
+            document.querySelectorAll('.builder-wrap-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.builder-wrap-btn').forEach(b => b.classList.remove('active', 'border-2', 'border-blush-500'));
+                    btn.classList.add('active', 'border-2', 'border-blush-500');
+                    selectedWrap = { name: btn.dataset.wrap, price: parseFloat(btn.dataset.price) };
+                    updateSummary();
+                });
+            });
+
+            document.getElementById('add-builder-to-cart').addEventListener('click', () => {
+                const totalPrice = selectedFlower.price + selectedWrap.price;
+                cart.push({
+                    id: 'custom-' + Date.now(),
+                    title: `Custom Bouquet (${selectedFlower.name})`,
+                    price: totalPrice,
+                    image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=400&q=80',
+                    quantity: 1
+                });
+                updateCartUI();
+                showToast('Custom Bouquet added to shopping bag!');
+                openCart();
+            });
+        }
+
+        // QuickView Modal
+        function initQuickView() {
+            const modal = document.getElementById('quickview-modal');
+            document.getElementById('quickview-close').addEventListener('click', () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            });
+
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('.quick-view-btn');
+                if (btn) {
+                    const product = products.find(p => p.id === btn.dataset.id);
+                    if (product) {
+                        document.getElementById('quickview-content').innerHTML = `
+                            <div class="aspect-square relative overflow-hidden">
+                                <img src="${product.image}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col justify-between space-y-3">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-blush-500">${product.category}</span>
+                                    <h3 class="font-serif-title text-2xl font-bold text-sage-800 mt-1">${product.title}</h3>
+                                    <p class="text-xs text-amber-500 mt-1">★ ${product.rating.toFixed(1)} Rating</p>
+                                    <p class="text-xs text-sage-600 leading-relaxed mt-2">${product.description}</p>
+                                </div>
+                                <div>
+                                    <p class="font-serif-title text-2xl font-bold text-sage-800 mb-3">${formatLKR(product.price)}</p>
+                                    <button onclick="addToCart('${product.id}')" class="w-full py-2.5 bg-blush-500 hover:bg-blush-600 text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        modal.classList.remove('opacity-0', 'pointer-events-none');
+                    }
+                }
+            });
+        }
+
+        // Order Tracker Logic
+        function initTracker() {
+            const modal = document.getElementById('tracker-modal');
+            const openBtns = [
+                document.getElementById('track-order-nav-btn'),
+                document.getElementById('mobile-track-btn'),
+                document.getElementById('footer-track-btn')
+            ];
+
+            openBtns.forEach(btn => {
+                if (btn) btn.addEventListener('click', () => modal.classList.remove('opacity-0', 'pointer-events-none'));
+            });
+
+            document.getElementById('tracker-close-btn').addEventListener('click', () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            });
+
+            document.getElementById('tracker-search-btn').addEventListener('click', () => {
+                const code = document.getElementById('tracker-input').value.trim();
+                if (!code) return showToast('Please enter an order ID!');
+                document.getElementById('track-order-id').textContent = code.toUpperCase();
+                document.getElementById('tracker-results').classList.remove('hidden');
+            });
+        }
+
+        // Quiz Logic
+        function initQuiz() {
+            const modal = document.getElementById('quiz-modal');
+            const openBtns = [
+                document.getElementById('nav-quiz-btn'),
+                document.getElementById('mobile-quiz-btn'),
+                document.getElementById('hero-quiz-btn')
+            ];
+
+            openBtns.forEach(btn => {
+                if (btn) btn.addEventListener('click', () => modal.classList.remove('opacity-0', 'pointer-events-none'));
+            });
+
+            document.getElementById('quiz-close-btn').addEventListener('click', () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            });
+
+            document.querySelectorAll('.quiz-opt-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const key = btn.dataset.key;
+                    quizAnswers[key] = btn.dataset.val;
+
+                    if (key === 'who') {
+                        document.getElementById('quiz-step-1').classList.add('hidden');
+                        document.getElementById('quiz-step-2').classList.remove('hidden');
+                    } else if (key === 'occasion') {
+                        document.getElementById('quiz-step-2').classList.add('hidden');
+                        document.getElementById('quiz-step-3').classList.remove('hidden');
+                    } else if (key === 'budget') {
+                        document.getElementById('quiz-step-3').classList.add('hidden');
+                        showQuizResult();
+                    }
+                });
+            });
+
+            document.getElementById('quiz-restart-btn').addEventListener('click', () => {
+                quizAnswers = {};
+                document.getElementById('quiz-result').classList.add('hidden');
+                document.getElementById('quiz-step-1').classList.remove('hidden');
+            });
+        }
+
+        function showQuizResult() {
+            const resultDiv = document.getElementById('quiz-result');
+            const matchCard = document.getElementById('quiz-recommended-card');
+            const recommended = products[Math.floor(Math.random() * products.length)];
+
+            matchCard.innerHTML = `
+                <img src="${recommended.image}" class="w-20 h-20 rounded-xl object-cover mx-auto">
+                <h4 class="font-serif-title font-bold text-lg text-sage-800">${recommended.title}</h4>
+                <p class="text-xs text-sage-500">${recommended.description}</p>
+                <p class="font-bold text-blush-600 text-sm">${formatLKR(recommended.price)}</p>
+                <button onclick="addToCart('${recommended.id}')" class="px-4 py-2 bg-blush-500 text-white rounded-xl text-xs font-bold mt-2">
+                    Add Recommendation to Cart
+                </button>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        // Wishlist System
+        function initWishlist() {
+            const modal = document.getElementById('wishlist-modal');
+            document.getElementById('wishlist-btn').addEventListener('click', () => {
+                renderWishlistUI();
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+            });
+            document.getElementById('wishlist-close-btn').addEventListener('click', () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            });
+        }
+
+        window.toggleWishlist = function(id) {
+            const index = wishlist.indexOf(id);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                showToast('Removed from wishlist');
+            } else {
+                wishlist.push(id);
+                showToast('Saved to wishlist!');
+            }
+            document.getElementById('wishlist-count').textContent = wishlist.length;
+            renderProducts(products);
+        };
+
+        function renderWishlistUI() {
+            const container = document.getElementById('wishlist-container');
+            if (wishlist.length === 0) {
+                container.innerHTML = '<p class="text-xs text-sage-500 text-center py-6">No saved items in your wishlist.</p>';
+                return;
+            }
+            container.innerHTML = '';
+            wishlist.forEach(id => {
+                const product = products.find(p => p.id === id);
+                if (product) {
+                    const el = document.createElement('div');
+                    el.className = 'flex items-center gap-3 p-3 bg-cream rounded-xl border border-sage-100';
+                    el.innerHTML = `
+                        <img src="${product.image}" class="w-12 h-12 rounded-lg object-cover">
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xs text-sage-800">${product.title}</h4>
+                            <p class="text-xs text-blush-600 font-bold">${formatLKR(product.price)}</p>
+                        </div>
+                        <button onclick="addToCart('${product.id}')" class="px-3 py-1 bg-blush-500 text-white text-xs rounded-lg font-bold">Add</button>
+                    `;
+                    container.appendChild(el);
+                }
+            });
+        }
+
+        // Navigation Menu & Search
+        function initNavigation() {
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            const searchBar = document.getElementById('search-bar');
+            document.getElementById('search-toggle-btn').addEventListener('click', () => {
+                searchBar.classList.toggle('hidden');
+            });
+            document.getElementById('search-close').addEventListener('click', () => {
+                searchBar.classList.add('hidden');
+            });
+
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                renderProducts(products.filter(p => p.title.toLowerCase().includes(query) || p.description.toLowerCase().includes(query)));
+            });
+        }
+
+        // Countdown Timer
+        function initCountdown() {
+            let hours = 14, mins = 42, secs = 18;
+            setInterval(() => {
+                secs--;
+                if (secs < 0) { secs = 59; mins--; }
+                if (mins < 0) { mins = 59; hours--; }
+                document.getElementById('timer-hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('timer-mins').textContent = mins.toString().padStart(2, '0');
+                document.getElementById('timer-secs').textContent = secs.toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // Toast Notifications
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-sage-800 text-white text-xs px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 transform transition-all duration-300 scale-90 opacity-0';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-blush-400"></i> ${message}`;
+            container.appendChild(toast);
+
+            setTimeout(() => toast.classList.remove('scale-90', 'opacity-0'), 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+        })();
+    </script>
+</body>
+</html>
